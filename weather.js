@@ -3,6 +3,10 @@ const querystring = require("querystring");
 const api = require("./api.json");
 
 // Print out temp details
+function printWeather(weather){
+  const message = `Current temperature in ${weather.name} is ${weather.main.temp}F`;
+  console.log(message);
+}
 // Print out error message
 
 function get(query) {
