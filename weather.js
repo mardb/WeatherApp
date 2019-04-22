@@ -10,6 +10,8 @@ function printWeather(weather){
 // Print out error message
 
 function get(query) {
+  //const url = `https://api.wunderground.com/api/${api.key}/geolookup/conditions/q/${query}.json`;
+
   const parameters = {
     APPID: api.key,
     units: "imperial"
@@ -36,7 +38,9 @@ function get(query) {
     response.on("end", () => {
       console.log(body);
       //Parse data
+       const weather = JSON.parse(body);
       //Print the data
+      printWeather(weather);
     });
   });
 }
